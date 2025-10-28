@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ER Diagram - Users, Feedback, Response</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h2 {
+      margin-bottom: 50px; 
+    }
+
+    .er-container {
+      position: relative;
+      display: flex;
+      /* space-between ensures equal gaps between the three flex items */
+      justify-content: space-between; 
+      align-items: flex-start;
+      /* Max-width calculated for equal gaps (260px*3 boxes + 250px*2 gaps = 1280px) */
+      max-width: 1280px; 
+      margin: auto;
+    }
+
+    .table-box {
+      background-color: #fff;
+      border: 2px solid #0078d4;
+      border-radius: 8px;
+      /* Fixed width is crucial for space-between to work predictably */
+      width: 260px; 
+      padding: 10px 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
+    .table-title {
+      font-weight: bold;
+      color: #0078d4;
+      text-align: center;
+      border-bottom: 2px solid #0078d4;
+      margin-bottom: 8px;
+      padding-bottom: 5px;
+    }
+
+    .field {
+      margin: 3px 0;
+      font-family: monospace;
+    }
+
+    svg {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      height: 300px; 
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Entity Relationship Diagram (Graphical View)</h2>
+
+  <div class="er-container">
+    <div class="table-box">
+      <div class="table-title">Users</div>
+      <div class="field">id (PK)</div>
+      <div class="field">name</div>
+      <div class="field">email</div>
+      <div class="field">type</div>
+    </div>
+
+    <div class="table-box">
+      <div class="table-title">Feedback</div>
+      <div class="field">id (PK)</div>
+      <div class="field">description</div>
+      <div class="field">userId (FK)</div>
+    </div>
+
+    <div class="table-box">
+      <div class="table-title">Response</div>
+      <div class="field">id (PK)</div>
+      <div class="field">description</div>
+      <div class="field">userId (FK)</div>
+      <div class="field">feedbackId (FK)</div>
+    </div>
+
+    <svg></svg>
+  </div>
+
+</body>
+</html>
